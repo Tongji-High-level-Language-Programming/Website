@@ -39,25 +39,71 @@ function computeBinaryToDecimal(binaryStr: string): string | null {
 </script>
 
 <template>
-    <div class="mt-8 p-4 bg-gray-50 rounded-md">
-        <div class="mb-4">
-            <label for="number_input" class="block text-sm font-medium text-gray-700 mb-2">
-                输入一个二进制纯小数
-                <span class="text-xs text-gray-500 font-normal">（{{ numberInput.length }}/112 位）</span>
-            </label>
-            <div class="mt-1 font-mono flex items-center space-x-0.5">
-                <span class=" text-gray-700 font-mono text-lg">0.</span>
-                <input type="text" v-model="numberInput" id="number_input" class="w-full px-4 py-3 pr-20 font-mono text-lg !border-2 !border-gray-300 rounded-lg 
-                    focus:!border-blue-500 focus:!boder-2 focus:outline-none focus:ring-2 focus:ring-blue-200 
-                    transition-all duration-200 placeholder-gray-400" placeholder="101101" />
+    <div class="mt-8 p-6 rounded-xl border border-(--vp-c-divider) bg-(--vp-c-bg-soft)">
+
+        <div class="space-y-4">
+            <!-- 标题行 -->
+            <div class="flex justify-between items-baseline">
+                <label for="number_input" class="block font-bold text-(--vp-c-text-1)">
+                    输入纯二进制小数
+                </label>
+                <span class="text-xs font-mono"
+                    :class="numberInput.length === 112 ? 'text-(--vp-c-red)' : 'text-(--vp-c-text-2)'">
+                    {{ numberInput.length }} / 112 位
+                </span>
             </div>
 
-            <div class="text-sm text-gray-600 mt-4 mb-2">对应十进制小数：</div>
+            <!-- 输入区域：Input Group 设计 -->
+            <div class="flex items-center w-full px-4 py-2 mt-1 rounded-lg 
+                border border-(--vp-c-divider) bg-(--vp-c-bg)
+                focus-within:ring-2 focus-within:ring-(--vp-c-brand) focus-within:border-transparent
+                transition-all duration-200">
+                <span class="text-xl font-mono text-(--vp-c-text-2) mr-1 select-none shrink-0">
+                    0.
+                </span>
 
-            <div
-                class="mt-1 p-2 bg-gray-100 rounded-lg border border-gray-200 font-mono text-blue-600 font-semibold break-all">
-                {{ binaryOutput || 'N/A' }}
+                <!-- 真正的 Input -->
+                <!-- 
+                    关键样式的重置：
+                    1. bg-transparent: 背景透明，显示父级的背景
+                    2. border-none: 去掉边框，使用父级的边框
+                    3. focus:ring-0: 去掉自身聚焦圈，使用父级的
+                    4. p-0: 强制去掉 padding，紧贴前缀（即便 VitePress 设置了 padding，p-0 权重通常够高，或者因为它是 flex item，padding 影响变小）
+                -->
+                <input type="text" v-model="numberInput" id="number_input" autocomplete="off" class="flex-1 w-full min-w-0 bg-transparent border-none p-0
+                    text-lg font-mono text-(--vp-c-text-1) 
+                    placeholder:text-(--vp-c-text-3)
+                    focus:ring-0 focus:outline-none" placeholder="101101..." />
+
             </div>
+
+            <!-- 箭头指引 (纯装饰) -->
+            <div class="flex justify-center text-(--vp-c-text-3) opacity-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-pulse" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+
+            <!-- 结果展示区域 -->
+            <div>
+                <div class="text-sm font-medium text-(--vp-c-text-2) mb-2">对应十进制小数：</div>
+
+                <div
+                    class="relative min-h-15 p-4 rounded-lg border border-(--vp-c-divider) bg-(--vp-c-bg) transition-colors duration-300">
+                    <div class="font-mono text-lg break-all leading-relaxed"
+                        :class="binaryOutput ? 'text-(--vp-c-brand)' : 'text-(--vp-c-text-3) italic'">
+                        {{ binaryOutput ? binaryOutput : 'N/A' }}
+                    </div>
+
+                    <!-- 一个小小的水印/图标，增加层次感 -->
+                    <div class="absolute top-2 right-2 text-(--vp-c-text-3) opacity-20 pointer-events-none">
+                        <span class="text-xs font-bold border border-current px-1 rounded">DEC</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </template>

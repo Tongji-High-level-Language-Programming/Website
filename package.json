@@ -1,18 +1,25 @@
 {
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/markdown-it-footnote": "^3.0.4",
+    "markdown-it-container": "^4.0.0",
     "markdown-it-footnote": "^4.0.0",
+    "markdown-it-math": "^5.2.1",
+    "postcss": "^8.5.6",
+    "temml": "^0.11",
     "vitepress": "2.0.0-alpha.12"
   },
-  "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a",
+  "packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
+    "@vueuse/core": "^14.1.0",
     "decimal.js": "^10.6.0",
     "tailwindcss": "^4.1.18",
+    "uuid": "^13.0.0",
     "vue": "^3.5.26"
   }
 }
