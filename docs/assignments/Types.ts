@@ -8,8 +8,8 @@ export type SyntaxConfig =
     } & SyntaxDefinition;
 
 export interface Problem {
-  filename: string;
   name: string;
+  title: string;
   description: string;
   allowedSyntax?: SyntaxConfig[];
   bannedSyntax?: SyntaxConfig[];

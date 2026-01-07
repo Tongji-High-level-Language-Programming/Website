@@ -13,7 +13,7 @@ const { copy, isSupported } = useClipboard();
 
 const copied = ref(false);
 
-let resetStateTimeout : number | null = null;
+let resetStateTimeout: NodeJS.Timeout | null = null;
 
 const handleClick = () => {
   copy(props.text);
@@ -35,8 +35,8 @@ const handleClick = () => {
     v-if="isSupported"
     @click="handleClick"
     title="复制到剪贴板"
-    class="vp-raw text-xs px-2 py-0.5 rounded transition-colors duration-200 cursor-pointer"
-    :class="[ 
+    class="text-(--vp-c-brand) text-xs px-2 py-0.5 rounded transition-colors duration-200 cursor-pointer"
+    :class="[
       copied
         ? 'text-green-600 font-bold bg-green-50/50'
         : 'text-(--vp-c-brand) hover:bg-(--vp-c-brand-dimm)',

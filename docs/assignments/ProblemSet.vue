@@ -28,12 +28,12 @@ const resolveSyntax = (items: any[], type: "allowed" | "banned") => {
     // 简单的回退逻辑
     return {
       name:
-        typeof item !== "string" && item.name
+        typeof item === "object" && item.name
           ? item.name
           : libData?.name || key,
-      reason:
-        typeof item !== "string" && item.reason
-          ? item.reason
+      details:
+        typeof item === "object" && item.detail
+          ? item.detail
           : libData?.detail || "无详细说明",
       link: libData?.link,
     };
@@ -80,11 +80,10 @@ const computedBanned = computed(() =>
     <!-- 2. 题目内容区域 -->
     <div v-if="currentProblem" class="p-5">
       <h3 class="text-xl font-bold mb-4 text-(--vp-c-text-1)">
-        {{ currentProblem.name }}
+        {{ currentProblem.title }}
       </h3>
 
       <!-- 题目描述 -->
-      <!-- prose 类通常来自 @tailwindcss/typography 插件，如果没有可以用 text-base -->
       <div
         class="text-(--vp-c-text-1) leading-relaxed mb-6"
         v-html="currentProblem.description"
@@ -136,8 +135,8 @@ const computedBanned = computed(() =>
             >
               <div
                 class="px-3 py-2 text-xs text-white bg-gray-800 rounded shadow-lg whitespace-normal text-center relative after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-t-gray-800 after:border-transparent"
+                v-html="item.details"
               >
-                {{ item.reason }}
               </div>
             </div>
           </div>
@@ -145,7 +144,7 @@ const computedBanned = computed(() =>
       </div>
 
       <!-- 格式说明 -->
-      <div class="space-y-1 mb-6 text-sm text-(--vp-c-text-2)">
+      <div class="space-y-1 mb-6 text-ms font-sans text-(--vp-c-text-1)">
         <div>
           <strong class="text-(--vp-c-text-1)">输入格式：</strong>
           <div class="whitespace-pre-wrap leading-relaxed">
@@ -176,11 +175,7 @@ const computedBanned = computed(() =>
             <span class="text-xs font-medium text-(--vp-c-text-2)"
               >样例输入 {{ idx + 1 }}</span
             >
-            <CopyButton
-              v-if="isSupported"
-              :text="sample.input"
-            >
-            </CopyButton>
+            <CopyButton v-if="isSupported" :text="sample.input"> </CopyButton>
           </div>
           <pre
             class="p-3 m-0 overflow-x-auto font-mono text-sm leading-snug text-(--vp-c-text-1)"
@@ -198,17 +193,25 @@ const computedBanned = computed(() =>
             <span class="text-xs font-medium text-(--vp-c-text-2)"
               >样例输出 {{ idx + 1 }}</span
             >
-            <CopyButton
-              v-if="isSupported"
-              :text="sample.output"
-            >
-            </CopyButton>
+            <CopyButton v-if="isSupported" :text="sample.output"> </CopyButton>
           </div>
           <pre
             class="p-3 m-0 overflow-x-auto font-mono text-sm leading-snug text-(--vp-c-text-1)"
             >{{ sample.output }}</pre
           >
         </div>
+      </div>
+
+      <!-- 提示区域 -->
+      <div
+        v-if="currentProblem.tips"
+        class="mt-4 p-4 border border-(--vp-c-divider) bg-(--vp-c-bg-elv)"
+      >
+        <h4 class="font-bold pb-3 text-(--vp-c-text-1)">💡 提示</h4>
+        <div
+          class="text-(--vp-c-text-1) leading-relaxed px-4"
+          v-html="currentProblem.tips"
+        ></div>
       </div>
     </div>
   </div>
