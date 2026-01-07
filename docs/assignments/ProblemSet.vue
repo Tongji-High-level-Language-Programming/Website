@@ -99,13 +99,26 @@ const computedBanned = computed(() =>
           <span class="text-sm font-bold text-(--vp-c-text-1) mr-1"
             >✅ 允许使用:</span
           >
-          <span
+          <div
             v-for="(item, i) in computedAllowed"
             :key="i"
-            class="px-2 py-0.5 rounded text-xs font-mono bg-(--vp-c-green-dimm) text-(--vp-c-green-darker) border border-(--vp-c-green-dimm)"
+            class="group relative cursor-help"
           >
-            {{ item.name }}
-          </span>
+            <span
+              class="px-2 py-0.5 rounded text-xs font-mono bg-(--vp-c-green-dimm) text-(--vp-c-green-darker) border border-(--vp-c-green-dimm)"
+            >
+              {{ item.name }}
+            </span>
+            <!-- Tooltip 内容 -->
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-50 hidden group-hover:block z-10"
+            >
+              <div
+                class="px-3 py-2 text-xs text-white bg-gray-800 rounded shadow-lg whitespace-normal text-center relative after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-t-gray-800 after:border-transparent"
+                v-html="item.details"
+              ></div>
+            </div>
+          </div>
         </div>
 
         <!-- 禁止列表 -->
@@ -136,8 +149,7 @@ const computedBanned = computed(() =>
               <div
                 class="px-3 py-2 text-xs text-white bg-gray-800 rounded shadow-lg whitespace-normal text-center relative after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-t-gray-800 after:border-transparent"
                 v-html="item.details"
-              >
-              </div>
+              ></div>
             </div>
           </div>
         </div>

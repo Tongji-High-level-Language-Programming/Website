@@ -5,6 +5,7 @@ export const week3Problems : Problem[] = [
         name: "3-b1",
         title: "求圆相关",
         description: "键盘输入半径和高度（类型为 double 型，不考虑各种输入错误），依次求圆周长、圆面积、圆球表面积、圆球体积、圆柱体积，要求输入输出有对应提示信息，输出结果保留小数点后 2 位。",
+        allowedSyntax: ["sequence", "basic-types", "stdio"],
         bannedSyntax: ["selection", "goto", "loop"],
         inputFormat: "共 1 行，包含由空格隔开的两个浮点数，分别表示半径和高度。",
         outputFormat: "共 6 行，如下所示：\n" +
