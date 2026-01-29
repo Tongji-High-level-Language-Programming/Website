@@ -3,7 +3,8 @@
     "docs/**/*.ts",
     "docs/.vitepress/config.mts",
     "docs/**/*.vue",
-    "docs/**/*.md"
+    "docs/**/*.md",
+    "*.md"
   ],
   "vueCompilerOptions": {
     "vitePressExtensions": [".md"],
