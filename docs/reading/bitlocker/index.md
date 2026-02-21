@@ -6,7 +6,7 @@ Windows 出厂自带用于保护数据安全的 [Bitlocker](https://support.micr
 
 :::
 
-::: danger
+::: danger 注意
 
 如果你的计算机并不是自己购买/配置，登录的不是自己的 Microsoft 账号（或者不知道是谁的），务必认真阅读本文并搞清楚情况！
 
@@ -75,33 +75,39 @@ BitLocker的风险主要集中在密钥管理和操作失误上。
 + 如果不想使用 Microsoft 账户或希望进一步确保安全性，则手动额外备份恢复密钥并妥善保管。
 
 你可以通过以下步骤检查你当前是否在计算机上登录了 Microsoft 账户：
-<details>
-      <summary>点击展开Windows10步骤</summary>
-      1. 打开开始菜单，点击“设置”按钮
+::: details 点击展开Windows10步骤
 
-  ![Win10开始](Win10开始.jpg)
-      2. 选择“账户”
+1. 打开开始菜单，点击“设置”按钮
 
-  ![Win10设置](Win10设置.jpg)
-    3. 如图，如果图中位置显示了电子邮件地址及“管理我的Microsoft账户”按钮，说明你已登录Microsoft账户。
+![Win10开始](Win10开始.jpg)
 
-  ![账户](账户.jpg)
-      如果显示如下，说明你是本地账户登录。
+2. 选择“账户”
 
-  ![本地](本地账户.png)
-</details>
+![Win10设置](Win10设置.jpg)
 
-  <details>
-    <summary>点击展开Windows11步骤</summary>
-    1. 右键“开始”按钮，点击“设置”
+3. 如图，如果图中位置显示了电子邮件地址及“管理我的Microsoft账户”按钮，说明你已登录Microsoft账户。此处的电子邮件地址即为登录Microsoft账户的电子邮件地址。
 
-  ![Win11开始](Win11开始.png)
-    2. 选择“账户”，如图，如果图中位置显示了电子邮件地址及“管理我的Microsoft账户”按钮，说明你已登录Microsoft账户。
+![账户](账户.jpg)
 
-  ![Win11设置](Win11设置.png)
-  </details>
+如果显示如下，说明你是本地账户登录。
 
-如果你是 Microsoft 账户，访问 [此网站](https://account.microsoft.com/devices/recoverykey) 检查你的Bitlocker恢复密钥是否已经上传。
+![本地](本地账户.png)
+
+:::
+
+::: details 点击展开Windows11步骤
+
+1. 右键“开始”按钮，点击“设置”
+
+![Win11开始](Win11开始.png)
+
+2. 选择“账户”，如图，如果图中位置显示了电子邮件地址及“管理我的Microsoft账户”按钮，说明你已登录Microsoft账户。此处的电子邮件地址即为登录Microsoft账户的电子邮件地址。
+
+![Win11设置](Win11设置.png)
+
+:::
+
+如果你是 Microsoft 账户，请用之前步骤中的电子邮件地址或用户名登录 [此网站](https://account.microsoft.com/devices/recoverykey) 检查你的Bitlocker恢复密钥是否已经上传。
 
 另外，你也可以手动备份恢复密钥，将其打印为纸质版本、备份到U盘或保存到其他位置。
 
@@ -110,24 +116,32 @@ BitLocker的风险主要集中在密钥管理和操作失误上。
 如果你不只有一个磁盘/分区，请对所有磁盘/分区都备份一遍，避免后悔。
 
 :::
-<details>
-<summary>展开手动备份步骤</summary>
 
-  1. 打开“此电脑”，选中要备份的驱动器，右键，点击“管理 Bitlocker”
-    ![此电脑](此电脑.jpg)
+::: details 展开手动备份步骤
 
-  2. 点击“备份恢复密钥”（需要管理员权限）
-    ![BitLocker 管理](Bitlocker管理.jpg)
+1. 打开“此电脑”，选中要备份的驱动器，右键，点击“管理 Bitlocker”
 
-  3. 点击“保存到 Microsoft 账户”以将其上传到 Microsoft 账户
-    ![保存到 Microsoft 账户](保存到Microsoft账户.jpg)
+![此电脑](此电脑.jpg)
 
-  4. 点击“保存到文件”以将其保存为一个`txt`文件（Bitlocker 不允许保存到加密的磁盘/分区，因此你应当插入一个U盘，或保存到未被加密的磁盘/分区）
-    ![保存到文件](保存到文件.jpg)
+2. 点击“备份恢复密钥”（需要管理员权限）
 
-  5. 点击“打印恢复密钥”以将其打印为纸质备份（需要打印机）
-    ![打印恢复密钥](打印恢复密钥.jpg)
-</details>
+![BitLocker 管理](Bitlocker管理.jpg)
+
+3. 进行备份（建议多使用几种备份方式，避免后悔）
+
+- 点击“保存到 Microsoft 账户”以将其上传到 Microsoft 账户
+
+![保存到 Microsoft 账户](保存到Microsoft账户.jpg)
+
+- 点击“保存到文件”以将其保存为一个`txt`文件（Bitlocker 不允许保存到加密的磁盘/分区，因此你应当插入一个U盘，或保存到未被加密的磁盘/分区）
+
+![保存到文件](保存到文件.jpg)
+
+- 点击“打印恢复密钥”以将其打印为纸质备份（需要打印机）
+
+![打印恢复密钥](打印恢复密钥.jpg)
+
+:::
 
 ## 关闭 BitLocker
 
