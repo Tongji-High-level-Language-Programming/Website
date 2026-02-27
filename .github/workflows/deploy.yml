@@ -77,31 +77,31 @@ jobs:
         uses: actions/deploy-pages@v4
 
   # 部署到校内服务器
-  # deploy-tongji-server:
-  #   if: github.event_name == 'push' && github.ref == 'refs/heads/main' # 仅在推送到 main 时部署
-  #   
-  #   # 只允许同时进行一次部署，跳过正在运行和最新队列之间的运行队列
-  #   # 但是，不要取消正在进行的运行，因为我们希望允许这些生产部署完成
-  #   concurrency:
-  #     group: pages
-  #     cancel-in-progress: false
-  #   environment:
-  #     name: tongji-server
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   name: Deploy to Tongji Server
-  #   steps:
-  #     - name: Download build artifact
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         name: vitepress-build
-  #     - name: Deploy to Server via SSH
-  #       uses: burnett01/rsync-deployments@7.1.0
-  #       with:
-  #         remote_path: /home/httpd/hlp-website/Website/
-  #         remote_host: ${{ secrets.SERVER_HOST}}
-  #         remote_user: ${{ secrets.USERNAME }}
-  #         remote_key: ${{ secrets.KEY }}
-  #         remote_port: ${{ secrets.SERVER_PORT}}
-  #         remote_key_pass: ${{ secrets.PASSPHRASE }}
-  #         switches: -avrz --delete
+  deploy-tongji-server:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' # 仅在推送到 main 时部署
+    
+    # 只允许同时进行一次部署，跳过正在运行和最新队列之间的运行队列
+    # 但是，不要取消正在进行的运行，因为我们希望允许这些生产部署完成
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: tongji-server
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy to Tongji Server
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: vitepress-build
+      - name: Deploy to Server via SSH
+        uses: burnett01/rsync-deployments@7.1.0
+        with:
+          remote_path: /home/httpd/hlp-website/Website/
+          remote_host: ${{ secrets.SERVER_HOST}}
+          remote_user: ${{ secrets.USERNAME }}
+          remote_key: ${{ secrets.KEY }}
+          remote_port: ${{ secrets.SERVER_PORT}}
+          remote_key_pass: ${{ secrets.PASSPHRASE }}
+          switches: -avrz --delete
