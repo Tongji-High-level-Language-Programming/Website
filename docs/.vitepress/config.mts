@@ -101,6 +101,7 @@ export default defineConfig({
         items: [
           { text: "预备知识", link: "/getting-started/#预备知识" },
           { text: "学习用电脑", link: "/getting-started/#学习用电脑" },
+          { text: "环境配置", link: "/getting-started/#环境配置" },
           { text: "计算机常识速查", link: "/getting-started/survival-guide/" },
         ],
       },

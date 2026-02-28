@@ -57,11 +57,7 @@ int main()
 
 ![alt text](defender.png)
 
-你的程序被 Windows 11 的 [智能应用控制](https://support.microsoft.com/zh-cn/windows/%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8E%A7%E5%88%B6%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94-285ea03d-fa88-4d56-882e-6698afdb7003) 功能阻止了。这个功能适合普通用户而非开发者，应当将它关掉。
-
-点击 [此链接](windowsdefender://smartapp/) 或通过 `设置-隐私和安全性-Windows安全中心-应用和浏览器控制-智能应用控制设置` 打开设置页面，将其设为“关闭”。
-
-![智能应用控制](smart-app-control.png)
+没有按照开学大礼包 [要求](/getting-started/setup/01/#_2-关闭智能应用控制) 完成环境配置。
 
 ### 截屏
 
