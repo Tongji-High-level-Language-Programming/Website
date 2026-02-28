@@ -1,4 +1,7 @@
 ---
+prev:
+    text: "小熊猫 C++ 的安装与配置"
+    link: "../03/"
 next:
     text: "完成准备"
     link: "/getting-started/#完成准备"

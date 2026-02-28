@@ -2,6 +2,9 @@
 prev:
     text: "环境配置"
     link: "../../#环境配置"
+next:
+    text: "用 VS2026 编译 C++ 程序"
+    link: "../02/"
 ---
 
 # Visual Studio 2026 的安装与配置

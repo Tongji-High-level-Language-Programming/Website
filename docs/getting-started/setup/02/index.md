@@ -2,6 +2,13 @@
 
 outline: [2, 3]
 
+prev:
+    text: "Visual Studio 2026 的安装与配置"
+    link: "../01/"
+next:
+    text: "小熊猫 C++ 的安装与配置"
+    link: "../03/"
+
 ---
 
 # 用 VS2026 编译 C++ 程序
