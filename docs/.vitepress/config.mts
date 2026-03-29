@@ -171,6 +171,27 @@ export default defineConfig({
         },
       },
     },
+
+    outline: {
+      label: "本页大纲",
+    },
+    lastUpdated: {
+      text: "最后更新于",
+    },
+    docFooter: {
+      prev: "上一篇",
+      next: "下一篇",
+    },
+    darkModeSwitchLabel: "外观",
+    lightModeSwitchTitle: "切换到浅色模式",
+    darkModeSwitchTitle: "切换到深色模式",
+    returnToTopLabel: "返回顶部",
+    sidebarMenuLabel: "项目目录",
+    notFound: {
+      quote: "网站中找不到这个页面。",
+      linkText: "返回首页",
+      linkLabel: "返回首页",
+    },
   },
   vite: {
     plugins: [tailwindcss()],
