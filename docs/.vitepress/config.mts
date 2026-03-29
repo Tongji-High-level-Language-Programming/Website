@@ -2,7 +2,8 @@ import { defineConfig } from "vitepress";
 import tailwindcss from "@tailwindcss/vite";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItContainer from "markdown-it-container";
-import markdownItMath from "markdown-it-math/temml"
+import markdownItMath from "markdown-it-math/temml";
+import type Token from "markdown-it/lib/token.mjs";
 
 // From: https://www.afunny.top/vitepress-search
 // 自定义分词函数
@@ -37,7 +38,7 @@ export default defineConfig({
       
       md.use(markdownItContainer, "problem-group", {
         marker: '%',
-        render: (tokens, idx: number) => {
+        render: (tokens: Token[], idx: number) => {
           if (tokens[idx].nesting === 1) {
             // 开标签
             return `<ProblemGroup>\n`;
@@ -47,7 +48,7 @@ export default defineConfig({
           }
         },
       }).use(markdownItContainer, "problem-item", {
-        render: (tokens, idx: number) => {
+        render: (tokens: Token[], idx: number) => {
           const m = tokens[idx].info.trim().match(/^problem-item\s+(.*)\s+(.*)$/);
           if (tokens[idx].nesting === 1) {
             // 获取 ;;; problem-item 后面写的标题

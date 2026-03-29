@@ -1,6 +1,8 @@
 {
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.2",
+    "@types/markdown-it": "^14.1.2",
+    "@types/markdown-it-container": "^4.0.0",
     "@types/markdown-it-footnote": "^3.0.4",
     "markdown-it-container": "^4.0.0",
     "markdown-it-footnote": "^4.0.0",
