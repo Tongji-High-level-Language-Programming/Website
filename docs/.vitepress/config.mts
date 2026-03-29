@@ -82,6 +82,7 @@ export default defineConfig({
       { text: "考试", link: "/exam" },
       { text: "FAQ", link: "/faq/" },
       { text: "参考图表", link: "/tables/" },
+      { text: "实用工具", link: "/tools/" },
       { text: "扩展阅读", link: "/reading/" },
       { text: "联系我们", link: "/contact" },
     ],
@@ -121,6 +122,10 @@ export default defineConfig({
       {
         text: "参考图表",
         link: "/tables/",
+      },
+      {
+        text: "实用工具",
+        link: "/tools/",
       },
       {
         text: "扩展阅读",

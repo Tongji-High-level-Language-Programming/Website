@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^14.2.1",
+    "compressorjs": "^1.2.1",
     "decimal.js": "^10.6.0",
     "tailwindcss": "^4.2.2",
     "uuid": "^13.0.0",
