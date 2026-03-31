@@ -1,7 +1,7 @@
 {
-    // MD013/line-length
-    "MD013": false,
-    // MD033/no-inline-html : https://github.com/DavidAnson/markdownlint/blob/v0.38.0/doc/md033.md
-    // The Vue elements are necessary for this project
-    "MD033": false
+  // MD013/line-length
+  "MD013": false,
+  // MD033/no-inline-html : https://github.com/DavidAnson/markdownlint/blob/v0.38.0/doc/md033.md
+  // The Vue elements are necessary for this project
+  "MD033": false,
 }

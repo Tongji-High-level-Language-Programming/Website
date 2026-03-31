@@ -7,7 +7,7 @@
     "*.md"
   ],
   "vueCompilerOptions": {
-    "vitePressExtensions": [".md"],
+    "vitePressExtensions": [".md"]
   },
   "compilerOptions": {
     "target": "ESNext",

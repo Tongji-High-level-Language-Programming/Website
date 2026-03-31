@@ -32,10 +32,10 @@ const resolveSyntax = (items: any[], type: "allowed" | "banned") => {
 };
 
 const computedAllowed = computed(() =>
-  props.allowed ? resolveSyntax(props.allowed, "allowed") : []
+  props.allowed ? resolveSyntax(props.allowed, "allowed") : [],
 );
 const computedBanned = computed(() =>
-  props.banned ? resolveSyntax(props.banned, "banned") : []
+  props.banned ? resolveSyntax(props.banned, "banned") : [],
 );
 </script>
 

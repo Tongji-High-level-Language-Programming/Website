@@ -11,8 +11,8 @@ function customTokenizer(text: string): string[] {
   // 去除空格，每个字分词
   return Array.from(
     new Intl.Segmenter("cn", { granularity: "word" }).segment(
-      text.replace(/ /g, "")
-    )
+      text.replace(/ /g, ""),
+    ),
   ).map((item) => item.segment);
 }
 
@@ -32,12 +32,10 @@ export default defineConfig({
         '<section class="footnotes">\n' +
         '<ol class="footnotes-list">\n';
 
-      md.use(markdownItMath, {
-        
-      })
-      
+      md.use(markdownItMath, {});
+
       md.use(markdownItContainer, "problem-group", {
-        marker: '%',
+        marker: "%",
         render: (tokens: Token[], idx: number) => {
           if (tokens[idx].nesting === 1) {
             // 开标签
@@ -49,7 +47,9 @@ export default defineConfig({
         },
       }).use(markdownItContainer, "problem-item", {
         render: (tokens: Token[], idx: number) => {
-          const m = tokens[idx].info.trim().match(/^problem-item\s+(.*)\s+(.*)$/);
+          const m = tokens[idx].info
+            .trim()
+            .match(/^problem-item\s+(.*)\s+(.*)$/);
           if (tokens[idx].nesting === 1) {
             // 获取 ;;; problem-item 后面写的标题
             const name = m ? m[1] : "New Problem";
@@ -59,7 +59,7 @@ export default defineConfig({
             return `</ProblemItem>\n`;
           }
         },
-        marker: ';'
+        marker: ";",
       });
     },
     lineNumbers: true,
@@ -110,7 +110,7 @@ export default defineConfig({
       {
         text: "作业",
         link: "/assignments/",
-        items: []
+        items: [],
       },
       {
         text: "学会提问",

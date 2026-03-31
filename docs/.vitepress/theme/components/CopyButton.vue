@@ -5,12 +5,15 @@ import { useClipboard } from "@vueuse/core";
 /**
  * text: 需要复制的内容
  */
-const props = withDefaults(defineProps<{
-  text: string;
-  resetTimeMs?: number;
-}>(), {
-  resetTimeMs: 1500
-});
+const props = withDefaults(
+  defineProps<{
+    text: string;
+    resetTimeMs?: number;
+  }>(),
+  {
+    resetTimeMs: 1500,
+  },
+);
 
 const { copy, isSupported } = useClipboard();
 

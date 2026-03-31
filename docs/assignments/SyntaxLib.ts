@@ -20,7 +20,8 @@ export const syntaxLib = {
   },
   stdio: {
     name: "标准输入输出",
-    detail: "C/C++ 基本的输入输出功能。使用 scanf(C 方式) 或 cin(C++ 方式) 从键盘读入，使用 printf(C 方式) 或 cout(C++ 方式) 向屏幕输出。",
+    detail:
+      "C/C++ 基本的输入输出功能。使用 scanf(C 方式) 或 cin(C++ 方式) 从键盘读入，使用 printf(C 方式) 或 cout(C++ 方式) 向屏幕输出。",
   },
   selection: {
     name: "选择结构",
