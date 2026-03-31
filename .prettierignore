@@ -1,0 +1,6 @@
+*.md
+*.svg
+pnpm-lock.yaml
+pnpm-workspace.yaml
+docs/.vitepress/cache
+docs/.vitepress/dist
