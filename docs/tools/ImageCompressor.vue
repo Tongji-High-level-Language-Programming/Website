@@ -717,7 +717,7 @@ const sliderPosition = ref(50);
                 <!-- 压缩后图 (底层) -->
                 <img
                   :src="previewItem.compressedUrl"
-                  class="w-full h-full object-contain"
+                  class="w-full h-full max-h-[65vh] object-contain"
                 />
                 <!-- 原图 (裁剪层) -->
                 <div
