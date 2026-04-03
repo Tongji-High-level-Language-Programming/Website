@@ -75,7 +75,7 @@ int main()
 
 - ShareX（默认快捷键：`Ctrl+Print Screen`）
   
-  ShareX 是一款开源的截屏工具，可在 GitHub 访问其 [官网](https://github.com/yumengmccc/Website) 下载。支持各种图片编辑功能，能查询历史截屏记录，还支持录屏和录制 GIF 等功能，截屏后会自动存入剪切板。
+  ShareX 是一款开源的截屏工具，可在 GitHub 访问其 [官网](https://getsharex.com/) 下载。支持各种图片编辑功能，能查询历史截屏记录，还支持录屏和录制 GIF 等功能，截屏后会自动存入剪切板。
 
 - Snipaste（默认快捷键：`F1`）
 
