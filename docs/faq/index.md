@@ -73,7 +73,11 @@ int main()
 
   Windows 截屏工具会直接让用户选定一个矩形区域，然后自动存入剪切板，操作快捷，裁剪区域会同时存入 `C:\用户\<username>\图片\屏幕截图` 中。
 
-- Snipaste（默认快捷键：`Ctrl+Alt+A`）
+- ShareX（默认快捷键：`Ctrl+Print Screen`）
+  
+  ShareX 是一款开源的截屏工具，可在 GitHub 访问其 [官网](https://github.com/yumengmccc/Website) 下载。支持各种图片编辑功能，能查询历史截屏记录，还支持录屏和录制 GIF 等功能，截屏后会自动存入剪切板。
+
+- Snipaste（默认快捷键：`F1`）
 
   Snipaste 是一款商业级截屏工具，有免费版，可通过 Microsoft Store 搜索 Snipaste 或者访问 [官网](https://snipasteapp.cn/) 下载。功能强大，和 QQ 截屏工具类似，其贴到屏幕后还可以对图片进行放大缩小、更改透明度的操作。双击已选中图形、点击复制到剪切板或使用快捷键 `Ctrl+C` 后，会让截屏内容（包括编辑内容）存入剪切板。
 
