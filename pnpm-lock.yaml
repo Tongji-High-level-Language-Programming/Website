@@ -17,6 +17,9 @@ importers:
       decimal.js:
         specifier: ^10.6.0
         version: 10.6.0
+      markdown-it-multimd-table:
+        specifier: ^4.2.3
+        version: 4.2.3
       tailwindcss:
         specifier: ^4.2.2
         version: 4.2.2
@@ -829,6 +832,9 @@ packages:
       temml:
         optional: true
 
+  markdown-it-multimd-table@4.2.3:
+    resolution: {integrity: sha512-KepCr2OMJqm7IT6sOIbuqHGe+NERhgy66XMrc5lo6dHW7oaPzMDtYwR1EGwK16/blb6mCSg4jqityOe0o/H7HA==}
+
   mdast-util-to-hast@13.2.1:
     resolution: {integrity: sha512-cctsq2wp5vTsLIcaymblUriiTcZd0CwWtCbLvrOzYCDZoWyMNV8sZ7krj09FSnsiJi3WVsHLM4k6Dq/yaPyCXA==}
 
@@ -1624,6 +1630,8 @@ snapshots:
   markdown-it-math@5.2.1(temml@0.13.2):
     optionalDependencies:
       temml: 0.13.2
+
+  markdown-it-multimd-table@4.2.3: {}
 
   mdast-util-to-hast@13.2.1:
     dependencies:
