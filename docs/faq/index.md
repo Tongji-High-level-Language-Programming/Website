@@ -158,43 +158,83 @@ int main()
 该问题解决方案适用于以下报错信息：
 
 > error C1083: 无法打开包括文件: "float.h"：No such file or directory
-
+<!-- or -->
 > error MSB8036: 找不到 Windows SDK 版本 10.0.xxxxx.0。请安装所需版本的 Windows SDK，或者在项目属性页中或通过右键单击解决方案并选择“重定解决方案目标”来更改 SDK 版本。
 
 有两种可能：
 
 ::: details 在 Visual Studio 安装过程中没有选择安装 Windows SDK 组件。
 
-   - 按 win 键打开“开始”菜单，搜索框中输入 `Visual Studio Installer`，打开
+- 按 win 键打开“开始”菜单，搜索框中输入 `Visual Studio Installer`，打开
+  
+![open VS installer](open-VS-installer.png)
 
-      ![open VS installer](open-VS-installer.png)
+- 选择 `修改`
+
+![modify VS](modify-VS.png)
    
-   - 选择 `修改`
+- 在打开的菜单中，确认右侧 `使用 C++ 的桌面开发-可选` 中至少有一个 `Windows 11 SDK` 选项被勾选。如果没有，将它勾选上，然后点击右下角的 `修改` 按钮安装，结束。
 
-      ![modify VS](modify-VS.png)
-   
-   - 在打开的菜单中，确认右侧 `使用 C++ 的桌面开发-可选` 中至少有一个 `Windows 11 SDK` 选项被勾选。如果没有，将它勾选上，然后点击右下角的 `修改` 按钮安装，结束。
-
-      ![VS Windows SDK](VS-Windows-SDK.png)
+![VS Windows SDK](VS-Windows-SDK.png)
 :::
 
 ::: details 手动删除或移动了 Windows Kits 文件夹的位置，或因为各种原因导致 Windows SDK 未正常安装。
 
-   - 如果你能想起来自己删除或移动过 Windows Kits 文件夹，请将它放回原位，路径通常是 `C:\Program Files (x86)\Windows Kits` 或 `D:\Windows Kits`。
+- 如果你能想起来自己删除或移动过 Windows Kits 文件夹，请将它放回原位，路径通常是 `C:\Program Files (x86)\Windows Kits` 或 `D:\Windows Kits`。
 
-   - 如果你不记得进行过相关操作/找不到 Windows Kits 文件夹/放回原位后问题仍未解决。
+- 如果你不记得进行过相关操作/找不到 Windows Kits 文件夹/放回原位后问题仍未解决。
 
-      - 打开 Windows 设置（快捷键 `Win + I`），进入 `应用-安装的应用`
+  - 打开 Windows 设置（快捷键 `Win + I`），进入 `应用-安装的应用`
 
-         ![setting application](setting-application.png)
+  ![setting application](setting-application.png)
 
-      - 搜索 Windows Software Development Kit，把这里能看到的每一项都选择卸载
+  - 搜索 Windows Software Development Kit，把这里能看到的每一项都选择卸载
 
-         ![uninstall Windows SDK](uninstall-Windows-SDK.png)
+  ![uninstall Windows SDK](uninstall-Windows-SDK.png)
 
-      - 卸载完成后，再打开 Visual Studio Installer，选择 `更多-修复` ，这将重新安装 Windows SDK。
+  - 卸载完成后，再打开 Visual Studio Installer，选择 `更多-修复` ，这将重新安装 Windows SDK。
 
-         ![repair VS](repair-VS.png)
+  ![repair VS](repair-VS.png)
 :::
 
 如果在执行上述步骤过程中出现问题，或完成上述步骤后报错仍未解决，请联系助教寻求帮助。
+
+### Fn 与 FnLock 相关简介
+
+在笔记本电脑中，我们能看到一个 `Fn` 键和 `FnLock` 键，其目的是为用户对计算机的常用操作提供更高效便捷的方式。
+
+::: details 关于 `Fn` 键
+
+`Fn` 意为 `Function`，功能键，通常位于键盘的左下角，它是一个修饰键，主要用于与其它键（位于 `F1~F12` 之间，另含 `PtrSc`，不同计算机存在差异）组合以触发额外的功能。
+
+下面以 LENOVO 某笔记本电脑举例：
+
+![alt text](F1F2F3.png)
+
+可以看到这三个键各自都含有两个图标，上方的 `F1`、`F2`、`F3` 称为**功能键**，下方的 `静音`、`音量减小`、`音量增大` 称为**媒体键**。而 `Fn` 的作用就是切换功能键和媒体键的选择。默认由电脑的设置方式决定。通常有两种模式：
+
+**媒体键模式（默认）**：
+
+- 单独按下 `F1-F12`：执行图标对应的快捷功能（比如按 `F1` 直接静音）。
+- 按住 `Fn` + 按 `F1-F12`：执行标准功能键（比如按 `Fn+F1` 打开帮助）。
+
+**功能键模式**：
+
+- 单独按下 `F1-F12`：执行标准功能键（比如按 `F1` 打开帮助）。
+- 按住 `Fn` + 按 `F1-F12`：执行图标对应的快捷功能（比如按 `Fn+F1` 静音）。
+
+你可以自行探索当前是什么模式。例如：在桌面单独按下 `F1` 后静音，说明是媒体键模式；在桌面单独按下 `F1` 后跳转到浏览器的帮助，说明是功能键模式。
+
+对于 Visual Studio 2026 的编译快捷键，若你处于媒体键模式，则需要按 `Ctrl+Fn+F5`。
+
+:::
+
+::: details `FnLock` 简介，如何切换媒体键模式和功能键模式？
+
+`FnLock` 按键用于切换媒体键模式和功能键模式，通常和 `Esc` 在同一个键上，位于键盘左上角。
+
+若您感觉长期需要组合 `Fn` 按键不太方便，或者你有长时间使用功能键模式（例如编程过程中）或者媒体键模式（例如休息中）的需求，可以进行当前模式的切换。
+
+切换方法：**使用 `Fn+FnLock` 组合键**。切换后 `FnLock` 键上的亮灯状态会发生改变。
+
+:::
