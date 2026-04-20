@@ -114,7 +114,6 @@ int main()
 
 ### exe 无法写入
 
-> LINK1168: 无法打开 xx.exe 进行写入
 > LINK : fatal error LNK1168: 无法打开 xx.exe 进行写入
 
 有三种可能：
@@ -137,7 +136,7 @@ int main()
 
 挂起进程的程序保持只读状态。
 
-::: 
+:::
 
 ![点击状态栏排序找到对应的挂起进程](https://cdn.jsdelivr.net/gh/ptezhub/ptezimg001@main/2026/20260420223004634.png)
 
