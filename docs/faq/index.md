@@ -123,9 +123,11 @@ int main()
 
 2. 用VS执行（Ctrl+F5/F5）并在快速（实际程序运行之前）关闭了命令行窗口。此时需要从任务管理器的后台进程中找到对应的程序（可以点击状态栏排序，将挂起状态排在前面），右键将其结束。
 
-![检查期间关闭命令行窗口的弹窗](https://cdn.jsdelivr.net/gh/ptezhub/ptezimg001@main/2026/20260420210905072.png)
 
 ::: details
+![检查期间关闭命令行窗口的弹窗](https://cdn.jsdelivr.net/gh/ptezhub/ptezimg001@main/2026/20260420210905072.png)
+
+> 无法启动 Microsoft Visual Studio 调试控制台
 
 若源代码中含有循环结构，生成的程序中含有可能会被安全软件判定为大规模循环的部分，首次运行这个程序时安全软件将会对其进行检查，检查时间一般与其判定的规模成正相关，最长大概在2s。
 
@@ -137,8 +139,9 @@ int main()
 
 ::: 
 
-![点击状态栏排序找到对应的挂起进程](https://cdn.jsdelivr.net/gh/ptezhub/ptezimg001@main/2026/20260420210757795.png)
+![点击状态栏排序找到对应的挂起进程](https://cdn.jsdelivr.net/gh/ptezhub/ptezimg001@main/2026/20260420223004634.png)
 
+本图中挂起进程为 `demo.exe`，将其结束即可继续编译生成可执行文件。
 
 3. 程序被杀毒软件误杀了，关闭杀毒软件
 
