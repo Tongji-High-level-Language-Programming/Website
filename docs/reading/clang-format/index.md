@@ -26,11 +26,38 @@
 
 因此，对于高程课程的编程作业，建议将所有项目建到同一个解决方案中，最后**只需在解决方案的目录下放置一个 `.clang-format` 文件即可**！
 
-### 2-1. 进入解决方案的目录，创建名为 `.clang-format` 的文件
+### 2-1. 找到并进入解决方案的目录
+
+> 可以在VS的解决方案资源管理器中，右键点击解决方案名称，选择“在文件资源管理器中打开(X)”
+
+### 2-2. （方法1）下载示例文件
+
+<PublicDownloadLink
+  href="/clang-format/space-four/.clang-format"
+  download-name="1.clang-format"
+  label=".clang-format 文件下载（4 空格缩进）"
+/>
+<br/>
+<PublicDownloadLink
+  href="/clang-format/use-tab/.clang-format"
+  download-name="2.clang-format"
+  label=".clang-format 文件下载（Tab 缩进）"
+/>
+
+两个下载文件均可，根据个人喜好自行选择。下载之后需要修改文件名：
+
+- 将 `1.clang-format` 或 `2.clang-format` 修改为 `.clang-format`
+- 将重命名后的 `.clang-format` 文件放到解决方案目录下
+
+### 2-3. （方法2）手动创建 `.clang-format` 文件并复制内容
+
+在解决方案目录下创建名为 `.clang-format` 的文件。
 
 ![alt text](create-clang-format.png)
 
-### 2-2. （方法1）记事本中打开该文件，复制以下内容
+用记事本打开 `.clang-format`，然后手动复制以下内容。
+
+4 空格缩进版本：
 
 ```yaml
 ---
@@ -45,7 +72,7 @@ IndentCaseLabels: true
 
 这个配置文件约束的格式设置样式完全遵循高程的要求，且缩进采用 **4 空格** 的形式。
 
-### 2-2. （方法2）记事本中打开该文件，复制以下内容
+Tab 缩进版本：
 
 ```yaml
 ---
@@ -63,9 +90,9 @@ IndentCaseLabels: true
 
 这个配置文件约束的格式设置样式完全遵循高程的要求，且缩进采用 **制表符** 的形式。
 
-两个方法均可，根据个人喜好自行选择。
+两个版本均可，根据个人喜好自行选择。
 
-### 2-3. 保存后关闭 `.clang-format` 文件
+保存后关闭 `.clang-format` 文件
 
 ## 第三步：设置默认格式设置样式
 
