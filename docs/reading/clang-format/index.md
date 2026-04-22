@@ -76,7 +76,7 @@ Tab 缩进版本：
 
 ```yaml
 ---
-# We'll use defaults from the LLVM style, but with 4 columns indentation.
+# We'll use defaults from the LLVM style, but with tabs for indentation and a tab width of 4 columns.
 BasedOnStyle: LLVM
 IndentWidth: 4
 UseTab: Always
