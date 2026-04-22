@@ -7,6 +7,7 @@ import ProblemGroup from "./components/ProblemGroup.vue";
 import ProblemItem from "./components/ProblemItem.vue";
 import SyntaxRestriction from "./components/SyntaxRestriction.vue";
 import ProblemSamples from "./components/ProblemSamples.vue";
+import PublicDownloadLink from "./components/PublicDownloadLink.vue";
 
 export default {
   extends: DefaultTheme,
@@ -17,6 +18,7 @@ export default {
       .component("ProblemGroup", ProblemGroup)
       .component("ProblemItem", ProblemItem)
       .component("ProblemSamples", ProblemSamples)
+      .component("PublicDownloadLink", PublicDownloadLink)
       .component("SyntaxRestriction", SyntaxRestriction);
   },
 } satisfies Theme;
