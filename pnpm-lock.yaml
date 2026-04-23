@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   vitepress@2.0.0-alpha.17:
-    hash: d490d64e2b97ac1de0c8e8d1787b6be2ae1883ace506e28ff5dc102767cf5a8d
+    hash: 73bdaeefcb6568e0e3e55bff1e06fa8f32ebd8e613a634cb7abeb01abfa77ee3
     path: patches/vitepress@2.0.0-alpha.17.patch
 
 importers:
@@ -67,7 +67,7 @@ importers:
         version: 0.13.2
       vitepress:
         specifier: 2.0.0-alpha.17
-        version: 2.0.0-alpha.17(patch_hash=d490d64e2b97ac1de0c8e8d1787b6be2ae1883ace506e28ff5dc102767cf5a8d)(jiti@2.6.1)(lightningcss@1.32.0)(postcss@8.5.8)
+        version: 2.0.0-alpha.17(patch_hash=73bdaeefcb6568e0e3e55bff1e06fa8f32ebd8e613a634cb7abeb01abfa77ee3)(jiti@2.6.1)(lightningcss@1.32.0)(postcss@8.5.8)
 
 packages:
 
@@ -1819,7 +1819,7 @@ snapshots:
       jiti: 2.6.1
       lightningcss: 1.32.0
 
-  vitepress@2.0.0-alpha.17(patch_hash=d490d64e2b97ac1de0c8e8d1787b6be2ae1883ace506e28ff5dc102767cf5a8d)(jiti@2.6.1)(lightningcss@1.32.0)(postcss@8.5.8):
+  vitepress@2.0.0-alpha.17(patch_hash=73bdaeefcb6568e0e3e55bff1e06fa8f32ebd8e613a634cb7abeb01abfa77ee3)(jiti@2.6.1)(lightningcss@1.32.0)(postcss@8.5.8):
     dependencies:
       '@docsearch/css': 4.6.2
       '@docsearch/js': 4.6.2
