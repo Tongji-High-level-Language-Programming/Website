@@ -6,6 +6,8 @@ import markdownItMath from "markdown-it-math/temml";
 import markdownItMultimdTable from 'markdown-it-multimd-table'
 import type Token from "markdown-it/lib/token.mjs";
 
+process.env.VITE_EXTRA_EXTENSIONS = 'clang-format';
+
 // From: https://www.afunny.top/vitepress-search
 // 自定义分词函数
 function customTokenizer(text: string): string[] {

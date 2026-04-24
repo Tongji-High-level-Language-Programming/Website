@@ -1,0 +1,23 @@
+diff --git a/dist/node/chunk-CpMTk0EA.js b/dist/node/chunk-CpMTk0EA.js
+index e7bd3a6..c7fcf51 100644
+--- a/dist/node/chunk-CpMTk0EA.js
++++ b/dist/node/chunk-CpMTk0EA.js
+@@ -28954,7 +28954,7 @@ const linkPlugin = (md, externalAttrs, base, slugify) => {
+   md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+     const token = tokens[idx];
+     const hrefIndex = token.attrIndex("href");
+-    if (hrefIndex >= 0 && token.attrIndex("target") < 0 && token.attrIndex("download") < 0 && token.attrGet("class") !== "header-anchor") {
++    if (hrefIndex >= 0 && token.attrGet("class") !== "header-anchor") {
+       const hrefAttr = token.attrs[hrefIndex];
+       let [url, frag] = hrefAttr[1].split(":~:", 2);
+       hrefAttr[1] = url;
+@@ -28971,7 +28971,8 @@ const linkPlugin = (md, externalAttrs, base, slugify) => {
+         if (
+           // skip internal anchor links
+           !url.startsWith("#") && // skip mail/custom protocol links
+-          protocol.startsWith("http") && // skip links to files (other than html/md)
++          protocol.startsWith("http") && // skip links with target/download attribute as they are meant to be opened/downloaded as-is
++          token.attrIndex("target") < 0 && token.attrIndex("download") < 0 && // skip links to files (other than html/md)
+           treatAsHtml(pathname)
+         ) {
+           normalizeHref(hrefAttr, env);
