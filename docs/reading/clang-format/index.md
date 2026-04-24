@@ -36,8 +36,6 @@
 
 [缩进采用 Tab制表符 的.clang-format](clang-format/tab.clang-format){download}
 
-[TEST](clang-format/.clang-format){download}
-
 两个下载文件均可，根据个人喜好自行选择。下载之后需要修改文件名：
 
 - 将 `space.clang-format` 或 `tab.clang-format` 重命名为 `.clang-format`
