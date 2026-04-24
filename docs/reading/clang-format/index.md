@@ -32,21 +32,13 @@
 
 ### 2-2. （方法1）下载示例文件
 
-<PublicDownloadLink
-  href="/clang-format/space-four/.clang-format"
-  download-name="1.clang-format"
-  label=".clang-format 文件下载（4 空格缩进）"
-/>
-<br/>
-<PublicDownloadLink
-  href="/clang-format/use-tab/.clang-format"
-  download-name="2.clang-format"
-  label=".clang-format 文件下载（Tab 缩进）"
-/>
+<a href="Website/clang-format/space.clang-format" download>缩进采用 4 空格的.clang-format</a>
+<br>
+<a href="Website/clang-format/tab.clang-format" download>缩进采用 Tab制表符 的.clang-format</a>
 
 两个下载文件均可，根据个人喜好自行选择。下载之后需要修改文件名：
 
-- 将 `1.clang-format` 或 `2.clang-format` 修改为 `.clang-format`
+- 将 `space.clang-format` 或 `tab.clang-format` 重命名为 `.clang-format`
 - 将重命名后的 `.clang-format` 文件放到解决方案目录下
 
 ### 2-3. （方法2）手动创建 `.clang-format` 文件并复制内容
