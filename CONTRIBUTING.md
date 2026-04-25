@@ -116,7 +116,7 @@ pnpm patch vitepress
 
 ## CI/CD
 
-所有在 `main` 分支上的更新均将被同步部署至 GitHub Pages 与同济内网服务器。其中，内网服务器的访问方式使用 [Environment Secret](https://docs.github.com/actions/learn-github-actions/contexts#secrets-context) 存储，如需维护请联系项目所有者。
+所有在 `main` 分支上的更新均将被同步部署至 GitHub Pages 与同济内网服务器。其中，内网服务器的访问方式使用 [Environment Secret](https://docs.github.com/actions/learn-github-actions/contexts#secrets-context) 存储，如需维护请[联系项目所有者](./README.md#联系我们)。
 
 ## 常见问题
 

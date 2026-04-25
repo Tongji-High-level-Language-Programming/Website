@@ -17,7 +17,7 @@
 
 欢迎为本项目做出贡献！
 
-开发及所需工具/依赖请参考 [Contributing](/CONTRIBUTING.md)。
+开发及所需工具/依赖/规范请参考 [Contributing](/CONTRIBUTING.md)。
 
 
 ### CI/CD
