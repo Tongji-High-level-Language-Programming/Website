@@ -32,9 +32,9 @@
 
 ### 2-2. （方法1）下载示例文件
 
-[缩进采用 4 空格的.clang-format](clang-format/space.clang-format){download}
+[缩进采用 4 空格的.clang-format](/clang-format/space.clang-format){download}
 
-[缩进采用 Tab制表符 的.clang-format](clang-format/tab.clang-format){download}
+[缩进采用 Tab制表符 的.clang-format](/clang-format/tab.clang-format){download}
 
 两个下载文件均可，根据个人喜好自行选择。下载之后需要修改文件名：
 
