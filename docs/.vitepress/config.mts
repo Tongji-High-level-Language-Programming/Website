@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItContainer from "markdown-it-container";
 import markdownItMath from "markdown-it-math/temml";
-import markdownItMultimdTable from 'markdown-it-multimd-table'
+import markdownItMultimdTable from "markdown-it-multimd-table";
 import type Token from "markdown-it/lib/token.mjs";
 
 // From: https://www.afunny.top/vitepress-search
@@ -36,10 +36,10 @@ export default defineConfig({
       md.use(markdownItMath, {});
 
       md.use(markdownItMultimdTable as any, {
-        rowspan: true,   // 如果你需要合并行，则开启
+        rowspan: true, // 如果你需要合并行，则开启
         multiline: true, // 如果你需要表格内换行，则开启
-        headerless: true // 如果你需要无表头表格，则开启
-      })
+        headerless: true, // 如果你需要无表头表格，则开启
+      });
 
       md.use(markdownItContainer, "problem-group", {
         marker: "%",
