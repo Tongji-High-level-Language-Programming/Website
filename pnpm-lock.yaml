@@ -22,9 +22,6 @@ importers:
       decimal.js:
         specifier: ^10.6.0
         version: 10.6.0
-      markdown-it-multimd-table:
-        specifier: ^4.2.3
-        version: 4.2.3
       tailwindcss:
         specifier: ^4.2.4
         version: 4.2.4
@@ -62,6 +59,9 @@ importers:
       markdown-it-math:
         specifier: ^5.2.1
         version: 5.2.1(temml@0.13.2)
+      markdown-it-multimd-table:
+        specifier: ^4.2.3
+        version: 4.2.3
       postcss:
         specifier: ^8.5.10
         version: 8.5.10
