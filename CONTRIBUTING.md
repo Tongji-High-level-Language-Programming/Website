@@ -4,7 +4,6 @@
 
 项目使用 [VitePress](https://vitepress.dev/) 开发。开发非文档内容之前建议阅读 VitePress 官方文档。
 
-
 ## 本地开发
 
 ### 安装依赖
@@ -40,6 +39,8 @@ pnpm run docs:preview
 ### 文本文件格式
 
 仓库通过 `.gitattributes` 统一文本文件使用 `LF` 换行符。一般不需要手动处理；如果提交中只出现了 line ending 变更，请先检查编辑器或 Git 配置。
+
+所有代码通过 [prettier](https://prettier.io/) 格式化。项目已使用 [husky](https://typicode.github.io/husky/) 配置 pre-commit hook，在 git commit 时自动完成格式化。
 
 ### 文档开发
 
