@@ -5,6 +5,7 @@ import markdownItContainer from "markdown-it-container";
 import markdownItMath from "markdown-it-math/temml";
 import markdownItMultimdTable from "markdown-it-multimd-table";
 import type Token from "markdown-it/lib/token.mjs";
+import VitePluginImageTools from "vite-plugin-image-tools";
 
 // From: https://www.afunny.top/vitepress-search
 // 自定义分词函数
@@ -202,6 +203,13 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss(),
+      VitePluginImageTools({
+        quality: 90,
+        enableDev: true,
+        enableDevConvert: true,
+      }),
+    ],
   },
 });
