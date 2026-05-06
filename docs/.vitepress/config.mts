@@ -93,6 +93,7 @@ export default defineConfig({
       { text: "参考图表", link: "/tables/" },
       { text: "实用工具", link: "/tools/" },
       { text: "扩展阅读", link: "/reading/" },
+      { text: "违规检测", link: "/detection/" },
       { text: "联系我们", link: "/contact" },
     ],
 
@@ -139,6 +140,10 @@ export default defineConfig({
       {
         text: "扩展阅读",
         link: "/reading/",
+      },
+      {
+        text: "违规知识检测",
+        link: "/detection/",
       },
     ],
 
