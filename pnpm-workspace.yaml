@@ -4,4 +4,3 @@ onlyBuiltDependencies:
   - sharp
 
 patchedDependencies:
-  vitepress@2.0.0-alpha.17: patches/vitepress@2.0.0-alpha.17.patch
