@@ -1,6 +1,10 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  sharp: true
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
   - sharp
-
-patchedDependencies:
+minimumReleaseAgeExclude:
+    - vitepress@2.0.0-alpha.18
