@@ -3,8 +3,6 @@ allowBuilds:
   esbuild: true
   sharp: true
 
-patchedDependencies:
-
 peerDependencyRules:
   allowedVersions:
     "markdown-it-math@5.2.1>temml": "0.13.2"
