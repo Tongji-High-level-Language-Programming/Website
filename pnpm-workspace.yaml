@@ -2,3 +2,5 @@ allowBuilds:
   '@parcel/watcher': true
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  - vitepress@2.0.0-alpha.20
