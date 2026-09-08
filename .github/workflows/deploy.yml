@@ -18,42 +18,69 @@ permissions:
   pages: write
   id-token: write
 
+# 集中管理相关依赖版本和常量
+env:
+  ARTIFACT_NAME: vitepress-build
+  BUILD_DIR: docs/.vitepress/dist
+  TJ_REMOTE_PATH: /home/httpd/hlp-website/Website/
+
+  NODE_VERSION: 24
+
+  # https://github.com/actions/checkout
+  checkout: &action_checkout actions/checkout@v7
+  # https://github.com/actions/setup-node
+  setup_node: &action_setup_node actions/setup-node@v7
+  # https://github.com/pnpm/action-setup
+  setup_pnpm: &action_setup_pnpm pnpm/action-setup@v6
+  # https://github.com/actions/configure-pages
+  configure_pages: &action_configure_pages actions/configure-pages@v6
+  # https://github.com/actions/upload-pages-artifact
+  upload_pages_artifact: &action_upload_pages_artifact actions/upload-pages-artifact@v5
+  # https://github.com/actions/deploy-pages
+  deploy_pages: &action_deploy_pages actions/deploy-pages@v5
+  # https://github.com/actions/upload-artifact
+  upload_artifact: &action_upload_artifact actions/upload-artifact@v7
+  # https://github.com/actions/download-artifact
+  download_artifact: &action_download_artifact actions/download-artifact@v8
+  # https://github.com/burnett01/rsync-deployments
+  rsync_deploy: &action_rsync_deploy burnett01/rsync-deployments@v9
+
 jobs:
   # 构建工作
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (with lfs dependencies)
-        uses: actions/checkout@v6
+        uses: *action_checkout
         with:
           lfs: true
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - name: Checkout LFS objects
         run: git lfs checkout
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: *action_setup_node
         with:
-          node-version: 24
+          node-version: ${{ env.NODE_VERSION }}
       - name: Setup pnpm
-        uses: pnpm/action-setup@v6
+        uses: *action_setup_pnpm
         with:
           cache: true
       - name: Setup Pages
-        uses: actions/configure-pages@v6
+        uses: *action_configure_pages
       - name: Install dependencies
         run: pnpm install
       - name: Build with VitePress
         run: pnpm docs:build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: *action_upload_pages_artifact
         with:
-          path: docs/.vitepress/dist
+          path: ${{ env.BUILD_DIR }}
       # 上传构建产物作为通用artifact，供部署到自有服务器使用
       - name: Upload build artifact for server deployment
-        uses: actions/upload-artifact@v7
+        uses: *action_upload_artifact
         with:
-          name: vitepress-build
-          path: docs/.vitepress/dist
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ${{ env.BUILD_DIR }}
 
   # 部署到 Github Pages
   deploy-gh-pages:
@@ -73,7 +100,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: *action_deploy_pages
 
   # 部署到校内服务器
   deploy-tongji-server:
@@ -91,13 +118,13 @@ jobs:
     name: Deploy to Tongji Server
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v8
+        uses: *action_download_artifact
         with:
-          name: vitepress-build
+          name: ${{ env.ARTIFACT_NAME }}
       - name: Deploy to Server via SSH
-        uses: burnett01/rsync-deployments@v8
+        uses: *action_rsync_deploy
         with:
-          remote_path: /home/httpd/hlp-website/Website/
+          remote_path: ${{ env.TJ_REMOTE_PATH }}
           remote_host: ${{ secrets.SERVER_HOST}}
           remote_user: ${{ secrets.USERNAME }}
           remote_key: ${{ secrets.KEY }}
