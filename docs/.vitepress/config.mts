@@ -81,6 +81,7 @@ export default defineConfig({
       { text: "课程", link: "/syllabus/" },
       { text: "资源", link: "/resources/" },
       { text: "作业", link: "/assignments/" },
+      { text: "答疑", link: "/faq/gitea/" },
       { text: "考试", link: "/exam" },
       { text: "FAQ", link: "/faq/" },
       { text: "参考图表", link: "/tables/" },
