@@ -1,6 +1,5 @@
 import { defineConfig } from "vitepress";
 import tailwindcss from "@tailwindcss/vite";
-import markdownItFootnote from "markdown-it-footnote";
 import markdownItContainer from "markdown-it-container";
 import markdownItMath from "markdown-it-math/temml";
 import type Token from "markdown-it/lib/token.mjs";
@@ -27,7 +26,9 @@ export default defineConfig({
   lastUpdated: true,
   markdown: {
     config: (md) => {
-      md.use(markdownItFootnote);
+      // VitePress 自 v2.0.0-alpha.19 起内置脚注支持（`[^1]` 引用式与行内 `^[...]` 均可），
+      // 并由其自带的 @mdit/plugin-footnote 处理，无需再引入 markdown-it-footnote。
+      // 同时引入两者会导致脚注区块被渲染两次。此处仅自定义脚注区块的标题。
       md.renderer.rules.footnote_block_open = () =>
         "<h3>附注</h3>\n" +
         '<section class="footnotes">\n' +
