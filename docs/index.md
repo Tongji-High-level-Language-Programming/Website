@@ -14,11 +14,8 @@ hero:
       text: 准备工作
       link: /getting-started/
     - theme: alt
-      text: 学会提问
-      link: /ask-question/
-    - theme: alt
-      text: FAQ
-      link: /faq/
+      text: 答疑
+      link: /qa/
 
 features:
   - title: Logic-构建计算思维的基石

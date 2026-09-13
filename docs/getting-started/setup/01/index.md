@@ -92,7 +92,7 @@ next:
 
 :::
 
-![智能应用控制](/faq/smart-app-control.png)
+![智能应用控制](/qa/faq/smart-app-control.png)
 
 ## 3. 下载 VS2026 简体中文社区版
 
@@ -162,7 +162,7 @@ next:
 
 ::: tip
 
-安装时请保持默认的安装位置；如需修改，请确保安装路径中**不含中文及特殊字符**，否则 VS 更新后可能出现组件无法加载的问题（参见 [FAQ](/faq/#未能正确加载-intellicodecpppackage-包)）。
+安装时请保持默认的安装位置；如需修改，请确保安装路径中**不含中文及特殊字符**，否则 VS 更新后可能出现组件无法加载的问题（参见 [常见问题解答](/qa/faq/#未能正确加载-intellicodecpppackage-包)）。
 
 :::
 

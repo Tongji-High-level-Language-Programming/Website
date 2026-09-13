@@ -81,9 +81,8 @@ export default defineConfig({
       { text: "课程", link: "/syllabus/" },
       { text: "资源", link: "/resources/" },
       { text: "作业", link: "/assignments/" },
-      { text: "答疑", link: "/faq/gitea/" },
       { text: "考试", link: "/exam" },
-      { text: "FAQ", link: "/faq/" },
+      { text: "答疑", link: "/qa/" },
       { text: "参考图表", link: "/tables/" },
       { text: "实用工具", link: "/tools/" },
       { text: "扩展阅读", link: "/reading/" },
@@ -115,14 +114,12 @@ export default defineConfig({
         items: [],
       },
       {
-        text: "学会提问",
-        link: "/ask-question/",
-      },
-      {
-        text: "常见问题",
-        link: "/faq/",
+        text: "答疑",
+        link: "/qa/",
         items: [
-          { text: "高程答疑平台", link: "/faq/gitea/" },
+          { text: "提问指南", link: "/qa/ask/" },
+          { text: "答疑平台", link: "/qa/gitea/" },
+          { text: "常见问题解答", link: "/qa/faq/" },
         ],
       },
       {
