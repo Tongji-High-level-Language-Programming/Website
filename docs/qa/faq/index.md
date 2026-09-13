@@ -2,7 +2,7 @@
 
 ::: tip
 
-提问前请务必认真阅读 [学会提问](/ask-question/) 一文。
+提问前请务必认真阅读 [提问指南](/qa/ask/) 一文。
 
 :::
 
@@ -16,7 +16,7 @@
 
 ### 中文乱码
 
-请确保在 VS 中 [检查](/getting-started/setup/02/#check-encoding) 过源代码的文件编码；问题仍然存在，则参见 [区域和语言设置](/faq/region/)。
+请确保在 VS 中 [检查](/getting-started/setup/02/#check-encoding) 过源代码的文件编码；问题仍然存在，则参见 [区域和语言设置](/qa/faq/region/)。
 
 若想要快速定位问题，可参考这一份 [Unicode 中文乱码速查表](https://github.com/justjavac/unicode-encoding-error-table)。
 
