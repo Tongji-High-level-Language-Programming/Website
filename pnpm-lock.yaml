@@ -36,9 +36,6 @@ importers:
       '@types/markdown-it-container':
         specifier: ^4.0.0
         version: 4.0.0
-      '@types/markdown-it-footnote':
-        specifier: ^3.0.4
-        version: 3.0.4
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -46,9 +43,6 @@ importers:
         specifier: ^17.4.1
         version: 17.4.1
       markdown-it-container:
-        specifier: ^4.0.0
-        version: 4.0.0
-      markdown-it-footnote:
         specifier: ^4.0.0
         version: 4.0.0
       markdown-it-math:
@@ -724,9 +718,6 @@ packages:
   '@types/markdown-it-container@4.0.0':
     resolution: {integrity: sha512-GmD8OECLfzPHv8VyvFRzslqdwXoDBJ2H40fxXFjrarbqvJZSB/BJKZXN5e3k7Mx7GQanSNzTYhzeS3H9o0gAOw==}
 
-  '@types/markdown-it-footnote@3.0.4':
-    resolution: {integrity: sha512-XJ6n+v+2u+2gmYLSHcxyoNT/YrgrKvHuDJQlykFjuxCQCr86P2/fx1V6/0lcKxv5cSIlCaJ6sUcNS3zDI7I+LA==}
-
   '@types/markdown-it@14.2.0':
     resolution: {integrity: sha512-NoQ2yGlLWj4wpxMs+TYmRKk3thDrQ97agr7sFqfLsAlvoS8SNQuTrlObhFqG9iugdTtgOE9jpJ6FNM4ZGsa5xQ==}
 
@@ -1369,9 +1360,6 @@ packages:
 
   markdown-it-container@4.0.0:
     resolution: {integrity: sha512-HaNccxUH0l7BNGYbFbjmGpf5aLHAMTinqRZQAEQbMr2cdD3z91Q6kIo1oUn1CQndkT03jat6ckrdRYuwwqLlQw==}
-
-  markdown-it-footnote@4.0.0:
-    resolution: {integrity: sha512-WYJ7urf+khJYl3DqofQpYfEYkZKbmXmwxQV8c8mO/hGIhgZ1wOe7R4HLFNwqx7TjILbnC98fuyeSsin19JdFcQ==}
 
   markdown-it-math@6.0.1:
     resolution: {integrity: sha512-rtyAf+/yVLdD2Nrn+zXEnkLPIWPMVRrwwGr3eI6LoxW87BRPTx/Cmpjt1T5uc0pavH7HvGxCegmrpNHhpuJ8PA==}
@@ -2272,10 +2260,6 @@ snapshots:
     dependencies:
       '@types/markdown-it': 14.2.0
 
-  '@types/markdown-it-footnote@3.0.4':
-    dependencies:
-      '@types/markdown-it': 14.2.0
-
   '@types/markdown-it@14.2.0':
     dependencies:
       '@types/linkify-it': 5.0.0
@@ -2865,8 +2849,6 @@ snapshots:
   mark.js@8.11.1: {}
 
   markdown-it-container@4.0.0: {}
-
-  markdown-it-footnote@4.0.0: {}
 
   markdown-it-math@6.0.1:
     optionalDependencies:
