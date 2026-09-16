@@ -255,6 +255,15 @@ System.ArgumentException: 路径中具有非法字符
 
 **解决方案**：打开 Visual Studio Installer，卸载 VS 后重新安装，安装时在“安装位置”选项卡中选择**不含中文及特殊字符的路径**（建议直接使用默认路径）。
 
+### 扩展界面初始化抛出错误
+
+![扩展界面初始化抛出错误](extensionUIThrowError.png)
+
+> Initialization of 'Microsoft.VisualStudio.ExtensionsExplorer.UI.ThemedToggleButton' threw an exception.
+
+原因大概率源于某些扩展包没有正常加载。请按照 [未能正确加载“IntelliCodeCppPackage”包](#未能正确加载-intellicodecpppackage-包) 的解决方案进行操作，一般这两个问题也会先后出现。
+
+
 ### Fn 与 FnLock 相关简介
 
 在笔记本电脑中，我们能看到一个 `Fn` 键和 `FnLock` 键，其目的是为用户对计算机的常用操作提供更高效便捷的方式。
