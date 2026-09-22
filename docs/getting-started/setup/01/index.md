@@ -113,7 +113,7 @@ next:
 
 :::
 
-## 3. 关闭“使用 Unicode UTF-8 提供全球语言支持”
+## 3. 关闭“使用 Unicode UTF-8 提供全球语言支持” {#region-settings}
 
 ::: warning
 
@@ -147,10 +147,6 @@ next:
 :::
 
 ::: details 找不到上述选项？旧版 Windows 的设置方法
-
-#### 旧版 Windows 的区域和语言设置 {#old-windows-region}
-
-本课程所有提交的代码文件均要求使用国标字符编码（GB2312/GBK/GB18030，不区分这三者的细节）。大部分情况下，VS 创建空项目后默认即为符合要求的编码。
 
 在 Windows 10 或旧版 Windows 11 中，可能找不到上文“Beta 版:使用 Unicode UTF-8 提供全球语言支持”的开关；此时，如果出现“程序运行时中文显示为乱码”等问题，可以按下列步骤检查设置：
 
