@@ -16,14 +16,14 @@
 
 ### 中文乱码
 
-请确保在 VS 中 [检查](/getting-started/setup/02/#check-encoding) 过源代码的文件编码；问题仍然存在，则参见 [区域和语言设置](/qa/faq/region/)。
+请确保在 VS 中 [检查](/getting-started/setup/03/#check-encoding) 过源代码的文件编码；问题仍然存在，则参见 [旧版 Windows 的区域和语言设置](/getting-started/setup/01/#old-windows-region)。
 
 若想要快速定位问题，可参考这一份 [Unicode 中文乱码速查表](https://github.com/justjavac/unicode-encoding-error-table)。
 
 例如：
 
 - 若您运行程序时输出是**古文码**，大概率是因为源程序文件保存为了 UTF-8 方式，而终端以 GBK 方式打印，此时需要按大礼包方式设置文件编码为 GB 系列。
-- 若您运行程序时输出是**口字码**，大概率是因为源程序文件保存为 GB 系列，而终端以 UTF-8 方式打印，此时需要参见上方的区域和语言设置。
+- 若您运行程序时输出是**口字码**，大概率是因为源程序文件保存为 GB 系列，而终端以 UTF-8 方式打印，此时需要参见 [旧版 Windows 的区域和语言设置](/getting-started/setup/01/#old-windows-region)。
 
 ::: warning
 若您运行程序时输出无乱码，也不能排除源程序文件和打印方式都错误地使用了 UTF-8，因此仍要按大礼包方式正确设置编码并检查！

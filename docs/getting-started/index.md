@@ -53,12 +53,14 @@
 
 :::
 
-本课程使用 Visual Studio 2026 和 RedPanda Cpp 3.4(gcc 15.2.0) 双编译器。请在第一次作业发布之前，认真阅读下面四个文档，完成环境配置：
+本课程使用 Visual Studio 2026 和 RedPanda Cpp 3.4(gcc 15.2.0) 双编译器。请在第一次作业发布之前，认真阅读下面六个文档，完成环境配置：
 
-+ [Visual Studio 2026 的安装与配置](setup/01/)
-+ [用 VS2026 编译 C++ 程序](setup/02/)
-+ [小熊猫 C++ 的安装与配置](setup/03/)
-+ [用小熊猫 C++ 编译已在 VS2026 下通过的 C++ 程序](setup/04/)
++ [Windows 系统配置修改](setup/01/)
++ [Visual Studio 2026 的安装与配置](setup/02/)
++ [用 VS2026 编译 C++ 程序](setup/03/)
++ [小熊猫 C++ 的安装与配置](setup/04/)
++ [用小熊猫 C++ 编译已在 VS2026 下通过的 C++ 程序](setup/05/)
++ [安装 Chrome 浏览器](setup/06/)
 
 ## 完成准备
 
