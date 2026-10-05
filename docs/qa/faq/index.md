@@ -285,7 +285,7 @@ System.ArgumentException: 路径中具有非法字符
 ::: details 问题分析
 点击页面下面一行 `查看日志` 的小字，可以看到详细安装日志。
 
-![安装日志1](VSPCFailed-log1.png)
+![安装日志1](VSPCFailed-Log1.png)
 
 ```
 返回代码: 1
@@ -294,13 +294,13 @@ System.ArgumentException: 路径中具有非法字符
 
 单纯看这份日志无法精确定位，需要进一步看图中指向的日志。
 
-![指向的日志的最后位置](VSPCFailed-log2.png)
+![指向的日志的最后位置](VSPCFailed-Log2.png)
 
 指向的日志中翻到最后往前看，发现最后有 Result: Failure。全文搜索 Failure 没有其他位置出现，可以锁定是 devenv.exe 和 SSMS.exe 不存在，可以推测是它们由于某种原因在其他流程中安装失败。接下来需要看其他的安装日志。注意到这个日志名字 `dd_setup_20260915234957_301_Microsoft.VisualStudio.Product.Community.log`，中间有序号。可以尝试找中间没有序号数字的日志文件，这通常是主安装日志。序号前的数字显然为时间戳，与安装时间有关。可以推测主安装日志为 `dd_setup_20260915234957.log`。实际上确实如此。
 
 主安装日志中搜索 `Failure` 发现对应的位置很多，换用 `Error` 进行搜索也发现会匹配相关错误类。最后使用 `Error:` 进行定位，可以找到具体的错误信息。
 
-![主安装日志中的错误信息](VSPCFailed-log3.png)
+![主安装日志中的错误信息](VSPCFailed-Log3.png)
 
 > Error: Package 'Microsoft.VisualStudio.Setup.Configuration,version=4.8.41.48107' failed to install. MSI: D:\ProgramData\Microsoft\VisualStudio\Packages\Microsoft.VisualStudio.Setup.Configuration,version=4.8.41.48107\Microsoft.VisualStudio.Setup.Configuration.msi, Properties:  REBOOT=ReallySuppress ARPSYSTEMCOMPONENT=1  ALLUSERS="1"  MSIFASTINSTALL="7" , Return code: 1603, Details: 安装时发生严重错误, Signature: PackageId=Microsoft.VisualStudio.Setup.Configuration;PackageAction=install;ReturnCode=1603
 
