@@ -275,6 +275,80 @@ System.ArgumentException: 路径中具有非法字符
 原因大概率源于某些扩展包没有正常加载。请按照 [未能正确加载“IntelliCodeCppPackage”包](#未能正确加载-intellicodecpppackage-包) 的解决方案进行操作，一般这两个问题也会先后出现。
 
 
+### 无法处理 Microsoft.VisualStudio.Product.Community
+
+![安装时显示无法处理 Microsoft.VisualStudio.Product.Community 图片](install-problem-VSPCFailed.png)
+
+> 安装已完成，但出现警告
+> 很抱歉，出现了问题 无法处理 Microsoft.VisualStudio.Product.Community。
+
+::: details 问题分析
+点击页面下面一行 `查看日志` 的小字，可以看到详细安装日志。
+
+![安装日志1](VSPCFailed-log1.png)
+
+```
+返回代码: 1
+返回代码详细信息: 函数不正确
+```
+
+单纯看这份日志无法精确定位，需要进一步看图中指向的日志。
+
+![指向的日志的最后位置](VSPCFailed-log2.png)
+
+指向的日志中翻到最后往前看，发现最后有 Result: Failure。全文搜索 Failure 没有其他位置出现，可以锁定是 devenv.exe 和 SSMS.exe 不存在，可以推测是它们由于某种原因在其他流程中安装失败。接下来需要看其他的安装日志。注意到这个日志名字 `dd_setup_20260915234957_301_Microsoft.VisualStudio.Product.Community.log`，中间有序号。可以尝试找中间没有序号数字的日志文件，这通常是主安装日志。序号前的数字显然为时间戳，与安装时间有关。可以推测主安装日志为 `dd_setup_20260915234957.log`。实际上确实如此。
+
+主安装日志中搜索 `Failure` 发现对应的位置很多，换用 `Error` 进行搜索也发现会匹配相关错误类。最后使用 `Error:` 进行定位，可以找到具体的错误信息。
+
+![主安装日志中的错误信息](VSPCFailed-log3.png)
+
+> Error: Package 'Microsoft.VisualStudio.Setup.Configuration,version=4.8.41.48107' failed to install. MSI: D:\ProgramData\Microsoft\VisualStudio\Packages\Microsoft.VisualStudio.Setup.Configuration,version=4.8.41.48107\Microsoft.VisualStudio.Setup.Configuration.msi, Properties:  REBOOT=ReallySuppress ARPSYSTEMCOMPONENT=1  ALLUSERS="1"  MSIFASTINSTALL="7" , Return code: 1603, Details: 安装时发生严重错误, Signature: PackageId=Microsoft.VisualStudio.Setup.Configuration;PackageAction=install;ReturnCode=1603
+
+可以看见组件包 `Microsoft.VisualStudio.Setup.Configuration,version=4.8.41.48107` 安装失败，返回了错误码 1603。
+
+可以推断是 MSI 安装过程中出现了问题，导致组件包安装失败。需要我们完全卸载 MSI 安装的相关组件后重新安装。
+
+（MSI 安装过程实际上也有日志，但是这次我们没有及时查看，被清理了）
+
+:::
+
+我们需要使用程序安装和卸载疑难解答程序（即 Program Install and Uninstall Troubleshooter，下文简称 Troubleshooter）来解决这个问题。
+
+直接 [点击这个下载链接](https://download.microsoft.com/download/7/E/9/7E9188C0-2511-4B01-8B4E-0A641EC2F600/MicrosoftProgram_Install_and_Uninstall.meta.diagcab)，即可下载官网的 Troubleshooter。
+
+::: details 下载 Troubleshooter（如果无法直接点击下载链接下载）
+
+或者进入官网 [下载页面](https://support.microsoft.com/zh-cn/windows/deployment/install-upgrade/fix-problems-that-block-programs-from-being-installed-or-removed)，选择 Windows 10，点击按钮下载 Troubleshooter。
+
+![选择 Windows 10 页面](VSPCFailed-DL1.png)
+![下载 Troubleshooter 按钮](VSPCFailed-DL2.png)
+
+:::
+
+下载完成后，运行下载的程序。
+
+![点击页面的下一步按钮](VSPCFailed-OP1.png)
+
+点击下一步按钮，可能会加载一会。
+
+![点击卸载按钮](VSPCFailed-OP2.png)
+
+点击卸载按钮。
+
+![检测注册表问题](VSPCFailed-OP3.png)
+
+在这个页面等待检测完成。
+
+![选中安装失败的程序 Microsoft Visual Studio Setup Configuration](VSPCFailed-OP4.png)
+
+检测完成后，在程序列表中选中 `Microsoft Visual Studio Setup Configuration`，然后点击下一步按钮。
+
+![点击下一步按钮](VSPCFailed-OP5.png)
+
+点击是 `是，尝试卸载`。
+
+卸载完成之后，重新运行 Visual Studio 安装程序，重新安装所需的 VS 版本即可。
+
 ### Fn 与 FnLock 相关简介
 
 在笔记本电脑中，我们能看到一个 `Fn` 键和 `FnLock` 键，其目的是为用户对计算机的常用操作提供更高效便捷的方式。
